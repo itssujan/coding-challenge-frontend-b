@@ -36,6 +36,11 @@ class SearchBar extends React.Component {
   }
 
   handleSubmit(event) {
+    fetch("http://localhost:3000/departures").then(results => {
+      this.setState({ fireRedirect: true });
+      return true;
+    });
+
     this.setState({ fireRedirect: true });
     event.preventDefault();
   }
@@ -80,7 +85,7 @@ class SearchBar extends React.Component {
           />
         </FormGroup>{" "}
         <Button type="submit">Search</Button>
-        {fireRedirect && <Redirect to={"/search"} />}
+        {fireRedirect && <Redirect to={"/departures"} />}
       </Form>
     );
   }

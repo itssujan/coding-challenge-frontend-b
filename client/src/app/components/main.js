@@ -3,13 +3,13 @@ import { render } from "react-dom";
 import { Switch, Route } from "react-router-dom";
 
 import OnboardingSearch from "./onboardingsearch";
-import SearchCriteria from "./searchcriteria";
+import Departures from "./departures";
 
 const Main = () => (
   <main>
     <Switch>
       <Route exact path="/" component={OnboardingSearch} />
-      <Route path="/search" component={SearchCriteria} />
+      <Route path="/departures" component={Departures} />
     </Switch>
   </main>
 );
