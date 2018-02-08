@@ -9,6 +9,7 @@ import {
   ControlLabel,
   Button
 } from "react-bootstrap";
+import { Redirect } from "react-router";
 
 import "react-datepicker/dist/react-datepicker-cssmodules.css";
 
@@ -21,7 +22,8 @@ class SearchBar extends React.Component {
       to: "Montréal",
       toCode: "f25dvk",
       startDate: moment(),
-      passengers: 1
+      passengers: 1,
+      fireRedirect: false
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -34,11 +36,13 @@ class SearchBar extends React.Component {
   }
 
   handleSubmit(event) {
-    alert("A name was submitted: " + this.state.value);
+    this.setState({ fireRedirect: true });
     event.preventDefault();
   }
 
   render() {
+    const { fireRedirect } = this.state;
+
     return (
       <Form inline onSubmit={this.handleSubmit}>
         <FormGroup controlId="formInlineName">
@@ -76,6 +80,7 @@ class SearchBar extends React.Component {
           />
         </FormGroup>{" "}
         <Button type="submit">Search</Button>
+        {fireRedirect && <Redirect to={"/search"} />}
       </Form>
     );
   }

@@ -10,7 +10,7 @@ class NavBar extends React.Component {
       <Navbar id="navheader">
         <Navbar.Header>
           <Navbar.Brand>
-            <a href="#brand">busbud</a>
+            <a href="/">busbud</a>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
