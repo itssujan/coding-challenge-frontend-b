@@ -1,0 +1,11 @@
+@import "variables.scss";
+
+#onboardingsearch {
+  background-color: $secondary-bg-color !important;
+  height: 300px;
+
+  form {
+    padding-top: 70px;
+    padding-left: 100px;
+  }
+}

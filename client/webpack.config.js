@@ -1,3 +1,5 @@
+var path = require("path");
+
 module.exports = options => {
   return {
     entry: "./src/app/index.js",
@@ -17,6 +19,10 @@ module.exports = options => {
               }
             }
           ]
+        },
+        {
+          test: /\.(s*)css$/,
+          loaders: ["style-loader", "css-loader", "sass-loader"]
         }
       ]
     }

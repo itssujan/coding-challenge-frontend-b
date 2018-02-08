@@ -1,0 +1,12 @@
+$alert-color: #d84e55;
+$alert-text-color: #ffffff;
+
+div #alertbox {
+  border-top: 0;
+  padding: 0 !important;
+  background-color: $alert-color !important;
+  height: 30px;
+  text-align: center;
+  color: $alert-text-color;
+  line-height: 30px;
+}

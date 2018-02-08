@@ -1,11 +1,8 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import Main from "./components/main";
 
-class App extends Component {
-  render() {
-    return <div>Welcome to BusBud!</div>;
-  }
-}
+import "./styles/index.scss";
 
 const root = document.querySelector("#app");
-ReactDOM.render(<App />, root);
+ReactDOM.render(<Main />, root);
