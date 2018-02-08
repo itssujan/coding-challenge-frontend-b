@@ -7,6 +7,15 @@ const port = process.env.PORT || 3000;
 
 let cache = require("memory-cache");
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+
 app.get("/", (req, res) => res.send("Welcome to busbud!"));
 
 let busbudAPIOpts = {
@@ -26,7 +35,6 @@ app.get("/departures", (req, res) => {
 
 app.get("/getdepartures", (req, res) => {
   let departures = cache.get("departures");
-  console.log(departures.complete);
   // while (!departures.complete) {
   //   console.log("pooling");
   // }
